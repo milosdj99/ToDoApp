@@ -1,0 +1,7 @@
+2022-03-25 14:24:08.654 +01:00 [DBG] Application started!
+2022-03-25 14:24:19.194 +01:00 [DBG] ToDoApi.GetAllLists() executed!
+2022-03-25 15:02:19.002 +01:00 [DBG] Application started!
+2022-03-25 15:02:27.175 +01:00 [DBG] ToDoApi.GetAllLists() executed!
+2022-03-25 15:02:31.968 +01:00 [DBG] ToDoApi.GetAllLists() executed!
+2022-03-25 15:03:00.935 +01:00 [DBG] ToDoApi.GetAllLists() executed!
+2022-03-25 15:03:26.074 +01:00 [DBG] ToDoApi.GetAllLists() executed!

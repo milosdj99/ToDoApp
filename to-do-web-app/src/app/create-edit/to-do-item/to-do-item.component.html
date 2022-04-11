@@ -1,0 +1,6 @@
+<div [formGroup]="formGroup">
+    <mat-checkbox *ngIf="this.formGroup.get('id')?.value !== null" style="text-align: left" formControlName="checked" (change)="applyChanges()" ></mat-checkbox>
+    <input style="text-align: right" matInput formControlName="content" (blur)="applyChanges()" placeholder="Add new item...">   
+    <button *ngIf="this.formGroup.get('id')?.value !== null" mat-stroked-button (click)="deleteItem()">Delete</button>
+</div>
+

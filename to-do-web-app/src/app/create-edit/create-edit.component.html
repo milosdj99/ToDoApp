@@ -1,0 +1,50 @@
+<form class="parent" [formGroup]="formGroup">
+    <mat-card>
+        <div style="text-align: center" appearance="fill">
+            <mat-label>List name:</mat-label>
+            <input matInput formControlName="title" (blur)="applyChanges()">
+        </div>
+
+        <app-to-do-item [listId]="formGroup.get('id')?.value" (addEvent)="addItem($event)">
+        </app-to-do-item>
+
+        <hr>
+        <div cdkDropList class="example-list" (cdkDropListDropped)="dropNotChecked($event)">
+            <div class="example-box" *ngFor="let group of notCheckedControls" cdkDrag>
+                <div>
+                    <div style="float:left" cdkDragHandle>
+                        <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"></path>
+                          <path d="M0 0h24v24H0z" fill="none"></path>
+                        </svg>
+                      </div>
+                    <app-to-do-item [formGroup]="group" [listId]="formGroup.get('id')?.value" (deleteEvent)="deleteItem($event)" (checkChangeEvent)="checkChange($event)">
+                    </app-to-do-item>
+                </div>
+            </div>
+        </div>
+
+        <hr *ngIf="checkedControls.length > 0">
+        <div cdkDropList class="example-list" (cdkDropListDropped)="dropChecked($event)">
+            <div class="example-box" *ngFor="let group of checkedControls" cdkDrag>
+                <div>
+                    <div style="float:left" cdkDragHandle>
+                        <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"></path>
+                          <path d="M0 0h24v24H0z" fill="none"></path>
+                        </svg>
+                      </div>
+                    <app-to-do-item [formGroup]="group" [listId]="formGroup.get('id')?.value" (deleteEvent)="deleteItem($event)" (checkChangeEvent)="checkChange($event)">
+                    </app-to-do-item>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center" appearance="fill">
+            <mat-label>Choose a date: </mat-label>
+            <input formControlName="reminderDate" (change)="applyChanges()" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </div>
+    </mat-card>
+</form>

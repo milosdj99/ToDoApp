@@ -1,0 +1,13 @@
+<div>
+    <mat-card style="height: fit-content; width: fit-content;">
+        <mat-card-title>
+            {{list.title}}
+        </mat-card-title>
+        <mat-card-content>
+            <mat-nav-list *ngFor="let item of list.items">
+                <mat-list-item>{{item.content}}</mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-nav-list>
+        </mat-card-content>
+    </mat-card>
+   </div>

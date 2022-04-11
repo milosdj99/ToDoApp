@@ -1,0 +1,22 @@
+
+<mat-card style="height: fit-content; width: fit-content;">
+    <mat-card-title>
+        {{toDoList.title}}
+    </mat-card-title>
+    <mat-card-content>
+        <mat-nav-list *ngFor="let item of toDoList.items">
+            <mat-list-item>{{item.content}}</mat-list-item>
+            <mat-divider></mat-divider>
+        </mat-nav-list>
+    </mat-card-content>  
+    <div style="float: right;">
+        <mat-divider></mat-divider>
+            <button style="float:left"  mat-stroked-button (click)="deleteToDoList(toDoList.id)">Delete</button>
+            <mat-divider></mat-divider>
+            <button style="float:right"  mat-stroked-button (click)="editToDoList(toDoList.id)">Edit</button>
+            <mat-divider></mat-divider>
+            <button style="float:right"  mat-stroked-button (click)="shareToDoList(toDoList.id)">Share</button>
+            <mat-divider></mat-divider>
+    </div> 
+</mat-card>
+
